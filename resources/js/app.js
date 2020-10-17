@@ -1,33 +1,59 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue'); //or bellow line
+import Vue from 'vue'      //--these nxt 3_lines are newly added as we installed vue-router
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+//----Support Vuex-----
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import storeData from "./store/index"   //--Vuex Coding file imported
+const store = new Vuex.Store(           //--Only 1st_bracket() here
+    storeData
+)
+
+//----Support Moment_Js------
+import {filter} from "./filter"
+
+//---router file imported---
+import {routes} from "./routes";
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('admin-main', require('./components/admin/AdminMaster.vue').default);   //situated in root-html+Contain <router-view>
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+
+//----V-form----
+import { Form, HasError, AlertError } from 'vform'
+
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+window.Form = Form;     //--for 'globally' use
+
+
+//------Sweet_alert_2-----
+import swal from 'sweetalert2'
+window.swal = swal;
+
+const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+window.toast = toast
+
+
+const router = new VueRouter({  //------------
+  routes,
+  mode: 'hash'
+  //mode: 'history'     //To remove '#' from URL
+})
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',     //--took id(#app) from root_html
+    router,         //--"router" ta oporer_code (const router) er teke bosano.
+    store           //--"store" ta oporer_code (const store) er teke bosano.
 });

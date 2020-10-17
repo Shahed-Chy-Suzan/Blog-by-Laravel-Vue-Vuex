@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel <br> Welcome.blade.file
                 </div>
 
                 <div class="links">

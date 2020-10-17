@@ -4,14 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Admin | Blog-Vue_Laravel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">     <!--this is for 'error free console'/(vue_devTool)-->
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
- {{--  <!-- Font Awesome -->
+  {{--  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -23,8 +25,10 @@
 
 
 <body class="hold-transition sidebar-mini">
+
 <!-- Site wrapper -->
-<div class="wrapper">
+<!--VUE_Js er jnno ei id='app' ta entire body te nyechi// id ta direct body_tag e use kra jai na,error dibe-->
+<div class="wrapper" id="app">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
@@ -55,22 +59,22 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link user-panel">
+            <router-link to="/home" class="nav-link user-panel">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
                 Dashboard
                 <i class="right fa fa-angle-left"></i>
               </p>
-            </a>
+            </router-link>
           </li>
 
           <li class="nav-item ">
-            <a href="../widgets.html" class="nav-link user-panel">
+            <router-link to="/category-list" class="nav-link user-panel">
               <i class="nav-icon fa fa-th"></i>
               <p>
                 Category
               </p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item ">
             <a href="../widgets.html" class="nav-link user-panel">
@@ -83,54 +87,25 @@
           </li>
 
         </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
+      </nav>  <!-- /.sidebar-menu -->
+    </div>  <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
-        <div class="card-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
-
-    </section>
-    <!-- /.content -->
+  <div class="content-wrapper pl-3">
+    <admin-main></admin-main>     <!---------AdminMaster file loaded here-------->
   </div>
   <!-- /.content-wrapper -->
 
+
+  <!----------------------Start_Footer---------------------------->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b>1.0
     </div>
-    <p>Copyright &copy; 2014-2018 || <strong>Blog - Project using Laravel-5.7 & Vue</strong> || All rights
+    <p>Copyright &copy; 2014-2018 || <strong>Blog - Project using Laravel-5.7 & Vue</strong> || AdminLTE-3.0.0-alpha.2 || All rights
     reserved.</p>
-  </footer>
+  </footer>  <!--------End_Footer-------->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
