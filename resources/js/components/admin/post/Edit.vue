@@ -64,7 +64,7 @@
             }
         },
         mounted(){
-            this.$store.dispatch("allCategory")                 //--1--
+            this.$store.dispatch("allCategory")                //--1--
         },
         created(){
             axios.get(`post/${this.$route.params.postid}`)

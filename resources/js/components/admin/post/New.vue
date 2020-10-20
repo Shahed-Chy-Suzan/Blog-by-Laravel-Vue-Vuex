@@ -66,7 +66,7 @@
             }
         },
         mounted(){
-            this.$store.dispatch("allCategory")           //--1--
+            this.$store.dispatch("allCategory")             //--1--
         },
         computed:{
             getallCategory(){
