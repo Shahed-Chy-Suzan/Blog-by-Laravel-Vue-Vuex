@@ -7,6 +7,6 @@ Vue.filter('timeformat',(arg)=>{                //--for formatting Time
     return moment(arg).format("MMM Do YYYY")
 })
 
-Vue.filter('sortlength',function (text,length,suffix) {
+Vue.filter('shortlength',function (text,length,suffix) {    //--for shortening description
     return text.substring(0,length)+suffix;
 })

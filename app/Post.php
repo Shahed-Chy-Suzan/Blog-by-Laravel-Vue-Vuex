@@ -11,6 +11,6 @@ class Post extends Model
     }
 
     public function category(){
-        return $this->belongsTo(Category::class,'cat_id');
-    }
+        return $this->belongsTo(Category::class,'cat_id');  
+    }    //--if wrote 'category_id' instead of 'cat_id' in Post's DB,don't have to pass this 'cat_id' as foreign_key
 }

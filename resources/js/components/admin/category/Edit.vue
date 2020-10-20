@@ -53,7 +53,7 @@
 
                         toast.fire({
                             icon: 'success',
-                            title: 'Category Updated successfully'
+                            title: 'Category Updated Successfully'
                         })
                     })
                     .catch(()=>{

@@ -6,6 +6,7 @@ import Vue from 'vue'      //--these nxt 3_lines are newly added as we installed
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+
 //----Support Vuex-----
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -15,8 +16,16 @@ const store = new Vuex.Store(           //--Only 1st_bracket() here
     storeData
 )
 
+
 //----Support Moment_Js------
-import {filter} from "./filter"
+import {filter} from "./filter"     //--Used for Shortening description
+
+
+//----Support Editor------
+import 'v-markdown-editor/dist/v-markdown-editor.css';
+import Editor from 'v-markdown-editor'
+Vue.use(Editor);
+
 
 //---router file imported---
 import {routes} from "./routes";
@@ -51,6 +60,7 @@ const router = new VueRouter({  //------------
   mode: 'hash'
   //mode: 'history'     //To remove '#' from URL
 })
+
 
 const app = new Vue({
     el: '#app',     //--took id(#app) from root_html

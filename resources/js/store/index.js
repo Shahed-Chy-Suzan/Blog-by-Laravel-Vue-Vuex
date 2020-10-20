@@ -2,7 +2,7 @@
 export default {
   state:{
       category:[],
-      // post:[],
+      post:[],
       // blogpost:[],
       // singlepost:[],
       // allcategories:[],
@@ -13,9 +13,9 @@ export default {
       getCategory(state){                  //--2--
           return state.category
       },
-      // getAllPost(state){
-      //     return state.post
-      // },
+      getAllPost(state){                   //--p2--
+          return state.post
+      },
       // getblogPost(state){
       //     return state.blogpost
       // },
@@ -37,13 +37,13 @@ export default {
                   context.commit('categoreis',response.data.categories)
               })
       },
-      // gelAllPost(context){
-      //     axios.get('/post')
-      //         .then((response)=>{
-      //             console.log(response.data)
-      //             context.commit('allpost',response.data.posts)
-      //         })
-      // },
+      getAllPost(context){                    //--p1-->>mutations
+          axios.get('/post')
+              .then((response)=>{
+                  console.log(response.data)
+                  context.commit('allpost',response.data.posts)
+              })
+      },
       // getblogPost(context){
       //     axios.get('/blogpost')
       //         .then((response)=>{
@@ -87,12 +87,12 @@ export default {
   },
 
   mutations:{
-      categoreis(state,data){                  //--1-->>state--
+      categoreis(state,data){                  //--1-->>state
           return state.category = data
       },
-      // allpost(state,payload){
-      //     return state.post = payload
-      // },
+      allpost(state,payload){                  //--p1-->>state
+          return state.post = payload
+      },
       // getblogPost(state,payload){
       //     return state.blogpost = payload
       // },

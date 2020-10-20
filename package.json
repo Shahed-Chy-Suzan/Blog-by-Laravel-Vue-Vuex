@@ -24,9 +24,11 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.1",
         "admin-lte": "^3.0.0-alpha.2",
         "moment": "^2.29.1",
         "sweetalert2": "^10.5.1",
+        "v-markdown-editor": "^1.2.6",
         "vform": "^1.0.1",
         "vue-router": "^3.4.6",
         "vuex": "^3.5.1"

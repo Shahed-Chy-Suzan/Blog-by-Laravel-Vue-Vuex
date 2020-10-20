@@ -30,14 +30,13 @@
                                     <th>Name</th>
                                     <th>Date</th>
                                     <th>Actions</th>
-
                                 </tr>
                                 </thead>
-                                <tbody>
 
+                                <tbody>
                                 <tr v-for="(category,index) in getallCategory" :key="category.id">
                                     <!-- <td><input type="checkbox" v-model="categoryItem" :value="category.id" ></td> -->
-                                    <td>{{index+1}}</td>
+                                    <td>{{index+1}}</td>    <!--for getting Serial-->
                                     <td>{{category.cat_name}}</td>
                                     <td>{{category.created_at | timeformat}}</td>   <!--Moment_Js applied to format date-->
                                     <td>
