@@ -40,6 +40,7 @@
                                     <td>{{category.cat_name}}</td>
                                     <td>{{category.created_at | timeformat}}</td>   <!--Moment_Js applied to format date-->
                                     <td>
+                                        <!-- <router-link :to="`/edit-category/${category.id}`" class="btn btn-warning mr-1">Edit</router-link> --> <!--or, -->
                                         <router-link :to="`/edit-category/${category.id}`" class="btn btn-sm btn-primary text-white">Edit</router-link>
                                         <a @click.prevent = "deletecategory(category.id)" class="btn btn-sm btn-danger text-white">Delete</a>
                                     </td>
@@ -61,11 +62,11 @@
             return{
                 // categoryItem:[],
                 // select:'',
-                // all_select:false
+                // all_select:false     //initial stage it will be false (before select item)
             }
         },
         mounted(){                                         //--1-->>action--
-            this.$store.dispatch("allCategory")
+            this.$store.dispatch("allCategory")           //the data in list updated without reload
         },
         computed:{
            getallCategory(){                               //--2--
@@ -90,7 +91,7 @@
         //         console.log(this.categoryItem)
         //        axios.get('/deletecategory/'+this.categoryItem)
         //            .then(()=>{
-        //                this.categoryItem = []
+        //                this.categoryItem = []  //after deleting of selected id then the dropdown will be nll
         //                this.$store.dispatch("allCategory")
         //                toast({
         //                    type: 'success',
@@ -101,13 +102,13 @@
         //     },
         //     selectAll(){
         //         if(this.all_select==false){
-        //             this.all_select = true
-        //             for(var category in this.getallCategory){
-        //                 this.categoryItem.push(this.getallCategory[category].id)
+        //             this.all_select = true     // সিলেক্ত করলে উপরে False এসাইনটা True হয়ে যাবে ।
+        //             for(var category in this.getallCategory){      // "var category" দিয়ে category ডিক্লার করছে ।। "getAllCategory" উপরের "mounted->getAllCategory()" থেকে কল করা
+        //                 this.categoryItem.push(this.getallCategory[category].id)   // "this.categoryItem" উপরের "data->categoryItem" থেকে কল  || "getAllCategory[category].id" এই মেথডের ভিতরে Category->id টা নিচ্ছে
         //             }
         //         }else{
-        //             this.all_select = false
-        //             this.categoryItem = []
+        //             this.all_select = false      // সিলেক্ত না করলে উপরে False এসাইনটা False ই থাকবে ।
+        //             this.categoryItem = []   //if click uncheck then all selected item will be null/Uncheck
         //         }
         //     }
         }

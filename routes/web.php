@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public/index');
 });
 
 Auth::routes();
@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/{anypath}','HomeController@index')->where('path','.*');  //--if any random route hit
 
 
-//--------------BackEnd Routes---------------
+//--------------BackEnd_Routes---------------
 Route::group(['middleware' => ['auth']], function () {         //checking authenticatiion using group_middleware
   //--Category--
   Route::post('/add-category','CategoryController@add_category');
@@ -43,10 +43,10 @@ Route::group(['middleware' => ['auth']], function () {         //checking authen
 });
 
 
-//--------------FrontEnd Routes---------------
-// Route::get('/blogpost','BlogController@get_all_blog_post');
-// Route::get('/singlepost/{id}','BlogController@getpost_by_id');
-// Route::get('/categories','BlogController@get_all_category');
-// Route::get('/categorypost/{id}','BlogController@get_all_post_by_cat_id');
+//--------------FrontEnd_Routes---------------
+Route::get('/blogpost','BlogController@get_all_blog_post');
+Route::get('/singlepost/{id}','BlogController@getpost_by_id');
+Route::get('/categories','BlogController@get_all_category');
+Route::get('/categorypost/{id}','BlogController@get_all_post_by_cat_id');
 // Route::get('/search','BlogController@search_post');
-// Route::get('/latestpost','BlogController@latest_post');
+Route::get('/latestpost','BlogController@latest_post');

@@ -33,10 +33,11 @@
     export default {
         name: "Edit",
         mounted(){
-            axios.get(`/editcategory/${this.$route.params.categoryid}`)
-                .then((response)=>{
-                    this.form.fill(response.data.category)
-                })
+            // axios.get('editCategory/'+id)  //or,
+            axios.get(`/editcategory/${this.$route.params.categoryid}`)   //here 'categoryid' from routes.js
+            .then((response)=>{
+                this.form.fill(response.data.category) //the 'category' from CategoryController[edit_category]
+            })
         },
         data(){
             return {
@@ -49,7 +50,7 @@
             updateCategory(){
                 this.form.post(`/update-category/${this.$route.params.categoryid}`)
                     .then((response)=>{
-                        this.$router.push('/category-list')
+                        this.$router.push('/category-list')     //redirect into category-list after save
 
                         toast.fire({
                             icon: 'success',

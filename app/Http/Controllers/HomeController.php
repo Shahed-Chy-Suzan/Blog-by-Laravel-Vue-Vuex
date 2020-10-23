@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // return view('home');             //--default/before chilo--
         return view('admin.adminmaster');
     }
 }

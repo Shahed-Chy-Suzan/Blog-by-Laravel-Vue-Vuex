@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Blog-Vue_Laravel</title>
+  <title>Admin | Blog-Vue_Laravel_Vuex Project</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{asset("assets/public/asset/ico/vue.png")}}"/>
 
   <meta name="csrf-token" content="{{ csrf_token() }}">     <!--this is for 'error free console'/(vue_devTool)-->
 
@@ -82,11 +83,14 @@
     </div>  <!-- /.sidebar -->
   </aside>
 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper pl-2 pb-5">
-    <admin-main></admin-main>             <!---------AdminMaster_component loaded here-------->
+    <!--------------------------Vue Routing------------------------>
+    <admin-main></admin-main>       <!--AdminMaster.vue loaded here--//it's come From "resources/js/app.js"-->
   </div>
   <!-- /.content-wrapper -->
+
 
 
   <!----------------------Start_Footer---------------------------->

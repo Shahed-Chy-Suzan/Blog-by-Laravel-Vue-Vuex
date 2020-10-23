@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
+    }  //we can use middleware in every controller but this is not good practice in large project instead of using it in 'web.php'(route)
 
 //--------------Add_category---------------------------------------
     public function add_category(Request $request){
@@ -57,9 +57,9 @@ class CategoryController extends Controller
 
 //--------------all_category---------------------------------------
     // public function selected_category($ids){
-    //   $all_id = explode(',',$ids);
+    //   $all_id = explode(',',$ids);     //Console এ চেক করলে 1,2,3 কমা(,) হয়ে আসে । ওটা থেকে দূর করার জন্য explode ইউজ করা হয় যাতে সেগুলা array হয়ে 123 এভাবে নে
     //   foreach ($all_id as $id){
-    //       $category = Category::find($id);
+    //       $category = Category::find($id);     //all_id Array ডাটার প্রতিবার একটি করে id ধরে ডিলিট হচ্ছে
     //       $category->delete();
     //   }
     // }

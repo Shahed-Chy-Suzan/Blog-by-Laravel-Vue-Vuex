@@ -12,7 +12,7 @@ class PostController extends Controller
 
 //-----------------All_post-----------------------------------------------
     public function all_post(){
-       $posts = Post::with('user','category')->orderBy('id','desc')->get();
+       $posts = Post::with('user','category')->orderBy('id','desc')->get(); //'user''category' come>>Post Model
        return response()->json([
            'posts'=>$posts
        ],200);
@@ -30,7 +30,7 @@ class PostController extends Controller
         $sub = substr($request->photo,0,$strpos);     //got the portion (data:image/jpeg;)
         $ex = explode('/',$sub)[1];                   //got our 'extention' (jpeg)
         $name = time().".".$ex;
-        $img = Image::make($request->photo)->resize(200, 200);
+        $img = Image::make($request->photo)->resize(870,350);
         $upload_path = public_path()."/uploadimage/";           //public_path() 'index.php' directory te niye jai
         $img->save($upload_path.$name);
 
