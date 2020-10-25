@@ -31,19 +31,29 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src="{{ asset('assets/admin/default/admin.png') }}"
-           alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>
     </a>
 
+      <!----- admin Logout ----->
+    <a href="{{ route('logout') }}" class="pl-5 ml-5"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+        @csrf
+    </form>
+
+
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
       <div class="user-panel d-flex">
-        <marquee class="text-info">#&nbsp&nbsp Blog - Project &nbsp&nbsp#&nbsp&nbsp Laraval - 5.7 &nbsp&nbsp#&nbsp&nbsp Vue JS</marquee>
+        <marquee class="text-info">#&nbsp&nbsp Blog - Project &nbsp&nbsp#&nbsp&nbsp Laraval - 5.7 &nbsp&nbsp#&nbsp&nbsp Vue JS &nbsp&nbsp#&nbsp&nbsp Vuex</marquee>
       </div>
 
       <!-- Sidebar Menu -->

@@ -3,9 +3,9 @@
         <div class="span4">
             <aside class="right-sidebar">
               <div class="widget">
-                <form class="form-search">   <!----Search Start---->
+                <form class="form-search">   <!----------Search Start------------>
                   <input @keyup="RealSearch" placeholder="Type something" v-model="keyword" type="text" class="input-medium search-query">
-                  <button type="submit" @click.prevent="RealSearch" class="btn btn-square btn-theme">Search</button>
+                  <button type="submit" @click.prevent="RealSearch" class="btn btn-square btn-theme">Search</button>  <!--@keyup="RealSearch" eta dile realtime search pawa jai/without button click-->
                 </form>     <!----Search End---->
               </div>
               <div class="widget">
@@ -38,7 +38,7 @@
         name: "BlogSidebar",
         data(){
            return {
-               keyword:''
+               keyword:''       //--for Search input field
            }
         },
         computed:{
@@ -54,11 +54,11 @@
             this.$store.dispatch('allcategories')                  //--fc1--
         },
         methods:{
-            RealSearch:_.debounce(function () {
+            RealSearch:_.debounce(function () {                     //--search--
                 this.$store.dispatch('SearchPost',this.keyword);
-            },1000)   //1000 means 1 secenod
+            },1000)   //1000 means 1 second
 
-            // RealSearch(){
+            // RealSearch(){     //--before appling lodash/debaunce //take a min_time to take value to search
             //    this.$store.dispatch('SearchPost',this.keyword)
             // }
         }
@@ -67,6 +67,10 @@
 
 <style scoped>
 /*  -কোন Component Load হওয়র সাথে সাথে mounted load হয় আগে
-    -ভুলেও এডমিনের Method/Route গুলা ইউজ করা যাবেনা কারণ ওগুলা Authenticate মানে লগিন থাকা লাগে */
+    -ভুলেও এডমিনের Method/Route গুলা ইউজ করা যাবেনা কারণ ওগুলা Authenticate মানে লগিন থাকা লাগে
+    -@keyup="RealSearch" eta dile realtime search pawa jai/without button click
+    -realtime search korar 1ta min_time fixed kre dithe 'lodash' use krtechi, ja laravel e buildin
+    -lodash er 'debaunce()' function syntex:  _.debounce(func, [wait=0], [options={}])
+*/
 </style>
 

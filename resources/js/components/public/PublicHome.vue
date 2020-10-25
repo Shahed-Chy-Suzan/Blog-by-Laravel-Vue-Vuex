@@ -31,7 +31,7 @@
     font-weight: bolder;
   }
   h5{
-    color: rgb(77, 173, 218);
+    color: rgb(46, 101, 184);
     width: 450px;
     margin: auto;
     padding-bottom: 50px;

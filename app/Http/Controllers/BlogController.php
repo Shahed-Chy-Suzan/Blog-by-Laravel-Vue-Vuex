@@ -41,7 +41,7 @@ class BlogController extends Controller
 
 
     public function search_post(){
-        $search = \Request::get('s');   //Scope Resoulation(:) - যদি কোন মেথড স্ট্যাটিক ডিফাইন্ড করা থাকে , সেক্ষেত্রে ডাবল কোলন থেকে সরাসরি ঐ মেথডে এক্সেস করা যায়
+        $search = \Request::get('s');   //Scope Resoulation(:)-যদি কোন মেথড স্ট্যাটিক ডিফাইন্ড করা থাকে,সেক্ষেত্রে ডাবল কোলন থেকে সরাসরি ঐ মেথডে এক্সেস করা যায়
         if($search!=null){
             $posts = Post::with('user','category')
                 ->where('title','LIKE',"%$search%")
@@ -52,7 +52,7 @@ class BlogController extends Controller
             ],200);
         }else{
           return $this->get_all_blog_post();
-        }
+        }    //--jodi Search_box e likha backspace diye moche dile(null) tkn jodi as usual sob post show na kore taile tkn ei else condition ta amader k apply kore dithe hobe
     }
 
 

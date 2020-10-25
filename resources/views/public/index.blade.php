@@ -227,6 +227,8 @@
       </header> <!---nd header--->
 
 
+
+
       <!--============================== Vue Routing Start ===========================-->
 
         <home-main></home-main>   <!--it's Loaded(PublicMaster) now & it's come From "resources/js/app.js"-->
@@ -234,18 +236,23 @@
       <!--============================== Vue Routing End   ===========================-->
 
 
+
+  <!-------------------Footer Start---------------------->
       <footer>
         <div class="container">
           <div class="row">
-            <div class="span3">
+            <div class="span5">
               <div class="widget">
-                <h5 class="widgetheading">Browse pages</h5>
+                <h5 class="widgetheading">Project's Require Information:</h5>
                 <ul class="link-list">
-                  <li><a href="#">About our company</a></li>
-                  <li><a href="#">Our services</a></li>
-                  <li><a href="#">Meet our team</a></li>
-                  <li><a href="#">Explore our portfolio</a></li>
-                  <li><a href="#">Get in touch with us</a></li>
+                  <li><strong>- Backend(Admin_Dashboard) :</strong></li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://127.0.0.1:8000/home#/ </li>
+                  <li><strong>- Admin Login :</strong></li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Email: admin@gmail.com</li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - password: adminadmin</li>
+                  <li><strong>- Project_Run(Frontend) :</strong></li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://127.0.0.1:8000/#/		 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//working(Development Server)</li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://localhost/Blog/#/blog  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// not working features</li>
                 </ul>
               </div>
             </div>
@@ -261,7 +268,7 @@
                 </ul>
               </div>
             </div>
-            <div class="span3">
+            {{-- <div class="span3">
               <div class="widget">
                 <h5 class="widgetheading">Flickr photostream</h5>
                 <div class="flickr_badge">
@@ -272,7 +279,7 @@
                 <div class="clear">
                 </div>
               </div>
-            </div>
+            </div> --}}
             <div class="span3">
               <div class="widget">
                 <h5 class="widgetheading">Get in touch with us</h5>
@@ -325,7 +332,7 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer>   <!-------------------End Footer---------------------->
     </div>
   </div>
 

@@ -56,12 +56,12 @@ class CategoryController extends Controller
     }
 
 //--------------all_category---------------------------------------
-    // public function selected_category($ids){
-    //   $all_id = explode(',',$ids);     //Console এ চেক করলে 1,2,3 কমা(,) হয়ে আসে । ওটা থেকে দূর করার জন্য explode ইউজ করা হয় যাতে সেগুলা array হয়ে 123 এভাবে নে
-    //   foreach ($all_id as $id){
-    //       $category = Category::find($id);     //all_id Array ডাটার প্রতিবার একটি করে id ধরে ডিলিট হচ্ছে
-    //       $category->delete();
-    //   }
-    // }
+    public function selected_category($ids){
+      $all_id = explode(',',$ids);     //Console এ চেক করলে 1,2,3 কমা(,) হয়ে(string) আসে । ওটা থেকে দূর করার জন্য explode ইউজ করা হয় যাতে সেগুলা array হয়ে 123 এভাবে নে
+      foreach ($all_id as $id){
+          $category = Category::find($id);     //all_id Array ডাটার প্রতিবার একটি করে id ধরে ডিলিট হচ্ছে
+          $category->delete();
+      }
+    }
 
 }
