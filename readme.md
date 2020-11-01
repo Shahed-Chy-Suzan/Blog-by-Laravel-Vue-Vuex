@@ -40,7 +40,6 @@
 - Moment_Js_support_syntex link : https://momentjs.com/docs/#/use-it/node-js/
 - 'FileReader.onload'(for photo) : https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload
 - Image Intervention Doc : http://image.intervention.io/getting_started/installation#laravel
-- Editor_Link("Vue Markdown Editor component for Vue.js") : https://vuejsexamples.com/vue-markdown-editor-component-for-vue-js/
 - Lodash debaunce function : https://lodash.com/docs#debounce (take a min_time to take value to search)
 - Laravel faker : https://github.com/fzaninotto/Faker
 - faker Laravel docs : https://laravel.com/docs/5.7/seeding#using-model-factories
