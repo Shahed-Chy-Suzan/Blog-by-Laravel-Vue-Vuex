@@ -6,7 +6,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Add New Category</h3>
-                        </div>  <!-- /.card-header -->
+                        </div>  <!--/.card-header-->
                         <!--------------form start--------------------------->
                         <form role="form" @submit.prevent="addCategory()">
                             <div class="card-body">

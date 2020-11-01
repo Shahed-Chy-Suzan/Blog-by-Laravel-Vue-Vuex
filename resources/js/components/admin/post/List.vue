@@ -28,7 +28,7 @@
                                 </thead>
 
                                 <tbody>
-                                <tr v-for="(post,index) in allpost">
+                                <tr v-for="(post,index) in allpost" :key="post.id">
                                     <td> {{index+1}} </td>
                                     <td v-if="post.user"> {{post.user.name}} </td>
                                     <td v-if="post.category"> {{post.category.cat_name}} </td>
@@ -71,7 +71,7 @@
                        this.$store.dispatch('getAllPost')       //--for reloading page
                        toast.fire({
                            icon: 'success',
-                           title: 'Post Deleted successfully'
+                           title: 'Post Deleted Successfully'
                        })
                    })
                    .catch(()=>{

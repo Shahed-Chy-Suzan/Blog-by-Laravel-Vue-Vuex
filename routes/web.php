@@ -25,14 +25,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //--------------BackEnd_Routes---------------
-Route::group(['middleware' => ['auth']], function () {         //checking authenticatiion using group_middleware
+Route::group(['middleware' => ['auth']], function () {         //checking authentication using group_middleware
   //--Category--
   Route::post('/add-category','CategoryController@add_category');
   Route::get('category','CategoryController@all_category');
   Route::get('category/{id}','CategoryController@delete_category');
   Route::get('editcategory/{id}','CategoryController@edit_category');
   Route::post('update-category/{id}','CategoryController@update_category');
-  Route::get('/deletecategory/{id}','CategoryController@selected_category');    //delete selected cat
+  Route::get('/deletecategory/{id}','CategoryController@selected_category');   //delete selected category
 
   //--Post--
   Route::get('/post','PostController@all_Post');

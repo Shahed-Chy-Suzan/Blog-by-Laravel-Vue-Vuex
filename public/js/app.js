@@ -4320,7 +4320,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.form.post("/update-category/".concat(this.$route.params.categoryid)).then(function (response) {
-        _this2.$router.push('/category-list'); //redirect into category-list after save
+        _this2.$router.push('/category-list'); //redirect to category-list component after save
 
 
         toast.fire({
@@ -4414,7 +4414,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     //--1-->>action--
-    this.$store.dispatch("allCategory"); //the data in list updated without reload
+    this.$store.dispatch("allCategory"); //the data in List updated without reload
   },
   computed: {
     getallCategory: function getallCategory() {
@@ -4449,7 +4449,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: 'Yes, Delete it!'
       }).then(function (result) {
         if (result.value) {
-          //in video the part is after- deletecategory(id)
+          //in video the part its after- deletecategory(id)
           axios.get('/category/' + id) //--when the request has passed then go next step
           .then(function () {
             _this.$store.dispatch("allCategory"); //after delete-list updated without reload
@@ -4469,7 +4469,7 @@ __webpack_require__.r(__webpack_exports__);
 
       console.log(this.categoryItem);
       axios.get('/deletecategory/' + this.categoryItem).then(function () {
-        _this2.categoryItem = []; //after deleting of selected id then the dropdown will be null
+        _this2.categoryItem = []; //after deleting of selected id then the dropdown will be null,//must b []
 
         _this2.$store.dispatch("allCategory"); //for reload purpose
 
@@ -4485,7 +4485,7 @@ __webpack_require__.r(__webpack_exports__);
         this.all_select = true; // সিলেক্ত করলে উপরে False এসাইনটা True হয়ে যাবে ।
 
         for (var category in this.getallCategory) {
-          // "var category" দিয়ে category ডিক্লার করছে ।। "getAllCategory" উপরের "mounted->getAllCategory()" থেকে কল করা
+          // "var category" দিয়ে category ডিক্লার করছে + "getAllCategory" উপরের "computed->getAllCategory()" থেকে কল করা
           this.categoryItem.push(this.getallCategory[category].id); // "this.categoryItem" উপরের "data->categoryItem" থেকে কল  || "getAllCategory[category].id" এই মেথডের ভিতরে Category->id টা নিচ্ছে
         }
       } else {
@@ -4793,7 +4793,7 @@ __webpack_require__.r(__webpack_exports__);
 
         toast.fire({
           icon: 'success',
-          title: 'Post Deleted successfully'
+          title: 'Post Deleted Successfully'
         });
       })["catch"](function () {});
     }
@@ -89020,7 +89020,7 @@ var render = function() {
                         attrs: {
                           type: "text",
                           id: "categoryId",
-                          placeholder: "Add New Category",
+                          placeholder: "Edit Category Name",
                           name: "cat_name"
                         },
                         domProps: { value: _vm.form.cat_name },
@@ -89764,7 +89764,7 @@ var render = function() {
                   _c(
                     "tbody",
                     _vm._l(_vm.allpost, function(post, index) {
-                      return _c("tr", [
+                      return _c("tr", { key: post.id }, [
                         _c("td", [_vm._v(" " + _vm._s(index + 1) + " ")]),
                         _vm._v(" "),
                         post.user
@@ -107274,7 +107274,7 @@ try {
   __webpack_require__(/*! admin-lte */ "./node_modules/admin-lte/dist/js/adminlte.min.js"); //------------------------
 
 
-  __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"); //--------------------------
+  __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"); //------path ta package.json theke copy kora---------
 
 } catch (e) {}
 /**

@@ -13,7 +13,7 @@ try {
 
     require('bootstrap');
     require('admin-lte');         //------------------------
-    require('@fortawesome/fontawesome-free');     //--------------------------
+    require('@fortawesome/fontawesome-free');     //------path ta package.json theke copy kora---------
 } catch (e) {}
 
 /**

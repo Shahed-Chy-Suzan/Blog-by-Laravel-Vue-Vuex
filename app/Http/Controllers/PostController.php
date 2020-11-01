@@ -26,11 +26,11 @@ class PostController extends Controller
             'description'=>'required|min:2|max:10000',
             'photo'=>'required'
         ]);
-        $strpos = strpos($request->photo,';');        //got index_position of ';' from string "data:image/jpeg;base64..."
+        $strpos = strpos($request->photo,';');    //got index_position of ';' from string "data:image/jpeg;base64..."
         $sub = substr($request->photo,0,$strpos);     //got the portion (data:image/jpeg;)
         $ex = explode('/',$sub)[1];                   //got our 'extention' (jpeg)
         $name = time().".".$ex;
-        $img = Image::make($request->photo)->resize(870,350);
+        $img = Image::make($request->photo)->resize(200,200);
         $upload_path = public_path()."/uploadimage/";           //public_path() 'index.php' directory te niye jai
         $img->save($upload_path.$name);
 
@@ -77,7 +77,7 @@ class PostController extends Controller
             $name = time().".".$ex;
             $img = Image::make($request->photo)->resize(200, 200);
             $upload_path = public_path()."/uploadimage/";
-            $image = $upload_path. $post->photo;
+            $image = $upload_path. $post->photo;            //previous image
             $img->save($upload_path.$name);
 
             if(file_exists($image)){
@@ -94,6 +94,5 @@ class PostController extends Controller
         $post->photo = $name;
         $post->save();
     }
-
 
 }

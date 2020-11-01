@@ -17,7 +17,7 @@ class BlogController extends Controller
 
 
     public function getpost_by_id($id){
-        $post = Post::with('user','category')->where('id',$id)->first(); //'user' & 'category' come>>Post Model
+        $post = Post::with('user','category')->where('id',$id)->first();    //'user' & 'category' come>>Post Model
         return response()->json([
             'post'=>$post
         ],200);
@@ -52,7 +52,7 @@ class BlogController extends Controller
             ],200);
         }else{
           return $this->get_all_blog_post();
-        }    //--jodi Search_box e likha backspace diye moche dile(null) tkn jodi as usual sob post show na kore taile tkn ei else condition ta amader k apply kore dithe hobe
+        }    //--jodi Search_box e likha backspace diye moche dile(null) tkn jodi as usual sob post show na kore, taile tkn ei else condition ta amader k apply kore dithe hobe
     }
 
 

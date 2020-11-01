@@ -249,7 +249,7 @@
                   <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://127.0.0.1:8000/home#/ </li>
                   <li><strong>- Admin Login :</strong></li>
                   <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Email: admin@gmail.com</li>
-                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - password: adminadmin</li>
+                  <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - password: admin</li>
                   <li><strong>- Project_Run(Frontend) :</strong></li>
                   <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://127.0.0.1:8000/#/		 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//working(Development Server)</li>
                   <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - http://localhost/Blog/#/blog  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// not working features</li>

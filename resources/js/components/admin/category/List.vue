@@ -66,7 +66,7 @@
             }
         },
         mounted(){                                         //--1-->>action--
-            this.$store.dispatch("allCategory")           //the data in list updated without reload
+            this.$store.dispatch("allCategory")           //the data in List updated without reload
         },
         computed:{
            getallCategory(){                               //--2--
@@ -98,7 +98,7 @@
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Yes, Delete it!'
                   }).then((result) => {
-                        if (result.value) {              //in video the part is after- deletecategory(id)
+                        if (result.value) {              //in video the part its after- deletecategory(id)
                             axios.get('/category/'+id)    //--when the request has passed then go next step
                                 .then(()=>{
                                   this.$store.dispatch("allCategory") //after delete-list updated without reload
@@ -115,20 +115,19 @@
                 console.log(this.categoryItem)
                 axios.get('/deletecategory/'+this.categoryItem)
                    .then(()=>{
-                       this.categoryItem = []  //after deleting of selected id then the dropdown will be null
+                       this.categoryItem = []        //after deleting of selected id then the dropdown will be null,//must b []
                        this.$store.dispatch("allCategory")    //for reload purpose
                        toast.fire({
                            icon: 'success',
                            title: 'Category Deleted Successfully'
                        })
-
                    })
             },
 
             selectAll(){
-                if(this.all_select==false){
+                if(this.all_select==false) {
                     this.all_select = true     // সিলেক্ত করলে উপরে False এসাইনটা True হয়ে যাবে ।
-                    for(var category in this.getallCategory){      // "var category" দিয়ে category ডিক্লার করছে ।। "getAllCategory" উপরের "mounted->getAllCategory()" থেকে কল করা
+                    for(var category in this.getallCategory){      // "var category" দিয়ে category ডিক্লার করছে + "getAllCategory" উপরের "computed->getAllCategory()" থেকে কল করা
                         this.categoryItem.push(this.getallCategory[category].id)   // "this.categoryItem" উপরের "data->categoryItem" থেকে কল  || "getAllCategory[category].id" এই মেথডের ভিতরে Category->id টা নিচ্ছে
                     }
                 }else{

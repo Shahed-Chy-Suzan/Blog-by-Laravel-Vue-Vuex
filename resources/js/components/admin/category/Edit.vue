@@ -13,7 +13,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="categoryId">Edit Category</label>
-                                    <input type="text" class="form-control" id="categoryId" placeholder="Add New Category" v-model="form.cat_name" name="cat_name" :class="{ 'is-invalid': form.errors.has('cat_name') }">
+                                    <input type="text" class="form-control" id="categoryId" placeholder="Edit Category Name" v-model="form.cat_name" name="cat_name" :class="{ 'is-invalid': form.errors.has('cat_name') }">
                                     <has-error :form="form" field="cat_name"></has-error>
                                 </div>
                             </div>  <!--/.card-body-->
@@ -50,7 +50,7 @@
             updateCategory(){
                 this.form.post(`/update-category/${this.$route.params.categoryid}`)
                     .then((response)=>{
-                        this.$router.push('/category-list')     //redirect into category-list after save
+                        this.$router.push('/category-list')   //redirect to category-list component after save
 
                         toast.fire({
                             icon: 'success',

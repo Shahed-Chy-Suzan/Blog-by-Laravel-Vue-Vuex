@@ -19,19 +19,13 @@
 
 <body class="hold-transition sidebar-mini">
 
-<!-- Site wrapper -->
-<!--VUE_Js er jnno ei id='app' ta entire body te nyechi// id ta direct body_tag e use kra jai na,error dibe-->
-<div class="wrapper" id="app">
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-    <!-- Left navbar links -->
-  </nav>
-  <!-- /.navbar -->
+<div class="wrapper" id="app">  <!--VUE_Js er jnno ei id='app' ta entire body te nyechi// id ta direct body_tag e use kra jai na,error dibe-->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom"> <!--Left navbar-->
+  </nav>  <!--/.navbar-->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="#" class="brand-link">   <!-- Brand Logo -->
       <img src="{{ asset('assets/admin/default/admin.png') }}"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
